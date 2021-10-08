@@ -12,6 +12,8 @@
         The current website Users are:
         <br/>
         <?php
+            require_once('protect-this.php');
+
             $userfile = fopen("text/credentials.txt", "r");
             while(($line=fgets($userfile))!==false){
                     $user = explode(",", $line);
