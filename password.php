@@ -28,7 +28,7 @@
 
   function checkPassword( $PASSWORD )
   {
-    if($PASSWORD == "23456")
+    if($PASSWORD == "admin")
        return true;
     else
        return false;
@@ -36,21 +36,7 @@
 
   function accessGranted( $USERNAME )
   {
-    
-    
-	<div class="container fullsize">
-        <h2>Contact Us</h2>
-	
-        	<div>
-            	<?php 
-                $contacts = fopen("text/credentials.txt", "r");
-                while(($line=fgets($contacts))!==false){
-                    echo $line;
-                    echo "<br/>";
-                }
-                fclose($contacts)
-                ?>
-            </div>
+    echo file_get_contents( "text/credentials.txt" );
    }
 
   function wrongPassword()
