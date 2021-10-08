@@ -85,7 +85,7 @@
                                     <a data-scroll-nav="0" href="#contact">Contact</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a data-scroll-nav="0" href="#secure">Secure</a>
+                                    <a data-scroll-nav="0" href="secure.html">Secure</a>
                                 </li>
                                 
                             </ul> <!-- navbar nav -->
@@ -621,39 +621,6 @@
 
     <!--====== SECURE PART STARTS ======-->
 
-    <section class="blog-area pt-125" id="secure">
-    
-	<div class="container fullsize">
-        <h2>Secure Content</h2>
-    <section class="main-section contact" id="contact">
-	
-        	<div>
-            <?php
-    /* Your password */
-    $password = 'MYPASS';
-
-    /* Redirects here after login */
-    $redirect_after_login = 'secure.php';
-
-    /* Will not ask password again for */
-    $remember_password = strtotime('+30 days'); // 30 days
-
-    if (isset($_POST['password']) && $_POST['password'] == $password) {
-        setcookie("password", $password, $remember_password);
-        header('Location: ' . $redirect_after_login);
-        exit;
-    }
-?>
-    <div style="text-align:center;margin-top:50px;">
-        You must enter the password to view this content.
-        <form method="POST">
-            <input type="text" name="password">
-        </form>
-    </div>
-            </div>
-        	
-        
-    </section>
 
     <!--====== SECURE PART ENDS ======-->
 
