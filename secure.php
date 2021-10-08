@@ -4,6 +4,8 @@
 <!-- This website is built modifying styles and themes originally created by bootstrapmade-->
 
     <head>
+    
+        <?php require_once('lock.php'); ?>
         <title>Greenscape-Secure Page</title>
     </head>
     <body>
@@ -12,8 +14,7 @@
         The current website Users are:
         <br/>
         <?php
-            require_once('protect-this.php');
-
+        
             $userfile = fopen("text/credentials.txt", "r");
             while(($line=fgets($userfile))!==false){
                     $user = explode(",", $line);
