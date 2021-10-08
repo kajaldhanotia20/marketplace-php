@@ -36,7 +36,7 @@
 
   function accessGranted( $USERNAME )
   {
-    echo file_get_contents( "text/credentials.txt" );
+    echo nl2br(file_get_contents ("text/credentials.txt" ));
    }
 
   function wrongPassword()
