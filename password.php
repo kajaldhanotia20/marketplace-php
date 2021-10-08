@@ -36,24 +36,21 @@
 
   function accessGranted( $USERNAME )
   {
-    print("<title>Welcome!</title></head>
-     <body style = \"font-family: arial;
-       Font-size: 1em; color: blue\">
-     <strong> Permission granted to $USERNAME! <br/></strong></body>");
-   
-    echo "<h2>The following users are using the website as of now:</h2>";  
-    echo "<strong>";
-   $data = [
-    ["id" => 1, "name" => 'Mary Smith'],
-    ["id" => 2, "name" => 'John Wang'],
-    ["id" => 3, "name" => 'Alex Bington'],
-    ["id" => 4, "name" => 'Kenzo Suzuki'],
-    ["id" => 5, "name" => 'Stephen Curry'],
-    ];
-     foreach ($data as ["id" => $id, "name" => $name]) {
-       echo nl2br("id: $id, name: $name\n");
-        }
-    echo "</strong>";    
+    
+    
+	<div class="container fullsize">
+        <h2>Contact Us</h2>
+	
+        	<div>
+            	<?php 
+                $contacts = fopen("text/credentials.txt", "r");
+                while(($line=fgets($contacts))!==false){
+                    echo $line;
+                    echo "<br/>";
+                }
+                fclose($contacts)
+                ?>
+            </div>
    }
 
   function wrongPassword()
