@@ -624,7 +624,7 @@
     <section class="blog-area pt-125" id="secure">
     
 	<div class="container fullsize">
-        <h2>Contact Us</h2>
+        <h2>Secure Content</h2>
     <section class="main-section contact" id="contact">
 	
         	<div>
@@ -633,7 +633,7 @@
     $password = 'MYPASS';
 
     /* Redirects here after login */
-    $redirect_after_login = 'index.php';
+    $redirect_after_login = 'secure.php';
 
     /* Will not ask password again for */
     $remember_password = strtotime('+30 days'); // 30 days
