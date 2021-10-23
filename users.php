@@ -9,9 +9,9 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
 if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+        die("Connection failed: \r\n" . $conn->connect_error);
     } 
- echo "Connected successfully";
+ echo "Connected successfully \r\n";
 
 $sql = "SELECT * FROM users";
 $result = $conn->query($sql);
@@ -31,12 +31,12 @@ if ($result->num_rows > 0) {
 while($row = $result->fetch_assoc())
   {
 
-    echo "First Name: " . $row["firstname"]
-          . "Last Name: " . $row["lastname"] 
-          . "Address: " . $row["homeaddress"]
-          . "Email: " . $row["email"]
-          . "Home Phone : " . $row["homephone"]
-          . "Mobile Number: " . $row["cellphone"]. "<br>";
+    echo "First Name: " . $row["firstname \r\n"]
+          . "Last Name: " . $row["lastname \r\n"] 
+          . "Address: " . $row["homeaddress \r\n"]
+          . "Email: " . $row["email \r\n"]
+          . "Home Phone : " . $row["homephone \r\n"]
+          . "Mobile Number: " . $row["cellphone \r\n"]. "<br>";
   }
 }
 
