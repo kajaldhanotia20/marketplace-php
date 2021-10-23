@@ -1,25 +1,31 @@
-<tbody>
-				        <?php 
-				        	$count = $result-> num_rows;
-					        if($count>0){
-					            $n  =   1;
-					            while($row = $result->fetch_assoc()){ 
-					        ?>
-					        <tr>
-					            <td><?php echo $row['firstname']; ?></td>
-					            <td><?php echo $row['lastname']; ?></td>
-					            <td><?php echo $row['email']; ?></td>
-                                		    <td>'<?php echo $row['homeaddress']; ?></td>
-                                                    <td>'<?php echo $row['homephone']; ?></td>
-                                                    <td>'<?php echo $row['cellphone']; ?></td>
-					        </tr>
-					        <?php 
-					            }
-					        }
-					        else {?>
-					        <tr>
-					            <td><strong>No Record(s) Found!</strong></td>
-					        </tr>
-					        $conn->close();
-				        <?php } ?>
-</tbody>
+<?php
+
+$sql = "SELECT * FROM users";
+$result = $conn->query($sql);
+
+echo 
+"<table border='1'>
+<tr>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Address</th>
+<th>Email</th>
+<th>Home Phone Number</th>
+<th>Mobile Number</th>
+</tr>";
+
+if ($result->num_rows > 0) {
+while($row = $result->fetch_assoc())
+  {
+
+    echo "First Name: " . $row["firstname"]
+          . "Last Name: " . $row["lastname"] 
+          . "Address: " . $row["homeaddress"]
+          . "Email: " . $row["email"]
+          . "Home Phone : " . $row["homephone"]
+          . "Mobile Number: " . $row["cellphone"]. "<br>";
+  }
+}
+
+mysqli_close($conn);
+?>
